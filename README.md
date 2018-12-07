@@ -30,15 +30,32 @@ v-once
 ### 修饰符
 待掌握
 
-
 ### 缩写
-<!-- 完整语法 -->
-<a v-bind:href="url">...</a>
-<!-- 缩写 -->
-<a :href="url">...</a>
+`<!-- 完整语法 -->`
+`<a v-bind:href="url">...</a>`
+`<!-- 缩写 -->`
+`<a :href="url">...</a>`
+`<!-- 完整语法 -->`
+`<a v-on:click="doSomething">...</a>`
+`<!-- 缩写 -->`
+`<a @click="doSomething">...</a>`
 
-<!-- 完整语法 -->
-<a v-on:click="doSomething">...</a>
-<!-- 缩写 -->
-<a @click="doSomething">...</a>
+## Demo3
+计算属性
+可以像绑定普通属性一样在模板中绑定计算属性,计算属性是基于它们的依赖进行缓存的。
+Date.now() 不是响应式依赖。
+computed: {
+  now: function () {
+    return Date.now()
+  }
+}
+
+Method
+不希望有缓存，请用方法来替代。
+
+## Demo4
+计算属性的setter
+
+## Dem05
+侦听属性
 
