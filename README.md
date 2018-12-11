@@ -56,6 +56,17 @@ Method
 ## Demo4
 计算属性的setter
 
-## Dem05
+## Dem05【待完善】
 侦听属性
+
+## Demo06
+Class绑定与Style绑定
+v-bind:class
+v-bind:style
+
+## Demo07
+条件渲染
+v-if
+v-else
+
 
