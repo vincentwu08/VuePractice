@@ -8,21 +8,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- 生产环境版本，优化了尺寸和速度 -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-    <title>Document</title>
+    <title>替换数组与对象更改检测</title>
 </head>
 <body>
     <div id="app">
         <ul>
-            <li v-for = "(item, index) in items">{{item.message}} 
-                <span v-if = "item.show">--- {{index}}</span>
-            </li>
-            <hr>
-            <li>
-                <ul v-for = "(value, key, index) in dataObject">{{index}}---{{key}}:{{value}}</ul>
-            </li>
+            <li v-for = "item in list">{{item}}</li>
         </ul>
-        <button @click = "changeStatus()">点击取反</button>
+        <button @click="replaceName('vincentwu', 'jason', 'tom')">addInfo</button>
     </div>
+    
     <script src="./index.js"></script>
 </body>
 </html>

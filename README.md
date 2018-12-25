@@ -77,5 +77,40 @@ v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做
 ## Demo08
 列表渲染
 
+## Demo09
+替换数组与对象更改检测
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+以上方法会出发更新。
 
+app.list.shift()
+"zhangsan"
+app.list.shift()
+"lisi"
+app.list.splice(0, 2, "zhangsan", "lisi")
+(2) ["zhangsan", "lisi", __ob__: Observer]
+app.list.push("lisi")
+3
+app.list.splice(2, 1)
+["lisi"]
+app.list.splice(2, 0, "wangwu", "sunliu")
 
+### 注意事项
+Vue 不能检测以下变动的数组：
+1、当你利用索引直接设置一个项时，例如：
+vm.items[indexOfItem] = newValue
+2、当你修改数组的长度时，例如：
+vm.items.length = newLength
+
+既检测也修改数据
+1、// Vue.set
+Vue.set(vm.items, indexOfItem, newValue)
+2、// Array.prototype.splice
+vm.items.splice(indexOfItem, 1, newValue)
+3、vm.$set 实例方法，该方法是全局方法 Vue.set 的一个别名：
+vm.$set(vm.items, indexOfItem, newValue)
